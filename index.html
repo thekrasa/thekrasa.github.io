@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Thekra Saud | Dentist</title>
+  <meta name="description" content="Professional dental website showcasing clinical case documentation, practice focus, CV, and professional links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" data-scroll>Dr. Thekra</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#expertise" data-scroll>Practice Focus</a>
+        <a href="#cases" data-scroll>Cases</a>
+        <a href="#testimonials" data-scroll>References</a>
+        <a href="#cv" class="nav-pill" data-scroll>Connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="Dentist portrait background"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Modern Dentistry</p>
+        <h1>Dr. Thekra Saud</h1>
+        <p class="hero-subtitle">Thoughtful, evidence-based dental care with a focus on precision, patient comfort, and long-term oral health.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cases" data-scroll>View Cases</a>
+          <a class="btn ghost" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#expertise" aria-label="Scroll to practice focus" data-scroll>↓</a>
+    </section>
+
+    <section class="section focus-section reveal" id="expertise">
+      <div class="section-heading focus-heading">
+        <p class="eyebrow">Practice Focus</p>
+        <h2>Precision, function, and natural-looking results.</h2>
+        <p>Aesthetic, restorative, and preventive dentistry delivered with attention to detail, clinical precision, and a commitment to long-term oral health.</p>
+      </div>
+
+      <div class="focus-showcase" aria-label="Dental areas of focus">
+        <article class="focus-card" data-expertise-category="aesthetic">
+          <div class="focus-image">
+            <img data-expertise-image src="assets/expertise-aesthetic-photo.png" alt="Aesthetic dental treatment detail" loading="lazy" />
+          </div>
+          <div class="focus-copy">
+            <span class="focus-index">01</span>
+            <p class="eyebrow">Aesthetic Dentistry</p>
+            <h3>Natural smile enhancement</h3>
+            <p>Enhancing smiles through carefully planned treatments that prioritize natural-looking results, balance, and long-term function.</p>
+          </div>
+        </article>
+
+        <article class="focus-card" data-expertise-category="restorative">
+          <div class="focus-image">
+            <img data-expertise-image src="assets/expertise-restorative-photo.png" alt="Restorative dental treatment detail" loading="lazy" />
+          </div>
+          <div class="focus-copy">
+            <span class="focus-index">02</span>
+            <p class="eyebrow">Restorative Dentistry</p>
+            <h3>Function with refined aesthetics</h3>
+            <p>Restoring comfort, function, and appearance through modern treatment approaches tailored to each patient's needs.</p>
+          </div>
+        </article>
+
+        <article class="focus-card" data-expertise-category="preventive">
+          <div class="focus-image">
+            <img data-expertise-image src="assets/expertise-preventive-photo.png" alt="Preventive dental care detail" loading="lazy" />
+          </div>
+          <div class="focus-copy">
+            <span class="focus-index">03</span>
+            <p class="eyebrow">Preventive Care</p>
+            <h3>Healthy smiles that last</h3>
+            <p>Supporting lifelong oral health through early intervention, patient education, and proactive dental care.</p>
+          </div>
+        </article>
+
+        <article class="focus-card" data-expertise-category="endodontic">
+          <div class="focus-image">
+            <img data-expertise-image src="assets/expertise-endo-photo.png" alt="Dental diagnosis and treatment planning detail" loading="lazy" />
+          </div>
+          <div class="focus-copy">
+            <span class="focus-index">04</span>
+            <p class="eyebrow">Patient-Centered Care</p>
+            <h3>Treatment shaped around the patient</h3>
+            <p>Building treatment plans around each patient's goals, concerns, and long-term wellbeing.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section cases-section" id="cases">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Case Gallery</p>
+        <h2>Before and after clinical gallery.</h2>
+        <p>A clean before-and-after view of selected clinical cases, focused on patient teeth and treatment outcomes.</p>
+      </div>
+
+      <div class="carousel-shell reveal" data-carousel="cases">
+        <button class="carousel-btn carousel-btn-left" type="button" aria-label="Scroll cases left">‹</button>
+        <div id="caseGallery" class="case-gallery carousel-track" aria-live="polite" tabindex="0"></div>
+        <button class="carousel-btn carousel-btn-right" type="button" aria-label="Scroll cases right">›</button>
+      </div>
+      <div class="carousel-hint">Swipe, drag, use keyboard arrows, or click the buttons to browse the gallery.</div>
+      <div id="galleryStatus" class="gallery-status"></div>
+    </section>
+
+    <section class="section testimonials reveal" id="testimonials">
+      <div class="section-heading">
+        <p class="eyebrow">References</p>
+        <h2>Professional feedback and patient experience.</h2>
+      </div>
+      <div class="carousel-shell" data-carousel="testimonials">
+        <button class="carousel-btn carousel-btn-left" type="button" aria-label="Scroll testimonials left">‹</button>
+        <div class="testimonial-grid carousel-track" tabindex="0">
+          <blockquote><p>“She takes her time, explains what she sees, and makes the patient feel part of the plan.”</p><footer>— Clinical Mentor</footer></blockquote>
+          <blockquote><p>“She explained the procedure clearly and made the appointment feel organized and comfortable.”</p><footer>— Patient</footer></blockquote>
+          <blockquote><p>“Her cases show careful planning, clean documentation, and pride in the small details.”</p><footer>— Faculty Reviewer</footer></blockquote>
+          <blockquote><p>“The result looked natural, not overdone, and the whole visit felt comfortable.”</p><footer>— Patient</footer></blockquote>
+          <blockquote><p>“Her approach is thoughtful, well-documented, and centered on the patient’s priorities.”</p><footer>— Senior Dentist</footer></blockquote>
+        </div>
+        <button class="carousel-btn carousel-btn-right" type="button" aria-label="Scroll testimonials right">›</button>
+      </div>
+      <div class="carousel-hint">Drag, swipe, or use the arrows to read all testimonials.</div>
+    </section>
+
+    <section class="section connect-section reveal" id="cv">
+      <div class="section-heading connect-heading">
+        <p class="eyebrow">Connect</p>
+        <h2>Learn more about Dr. Thekra Saud.</h2>
+        <p>Access her CV, professional network, and academic contributions through the links below.</p>
+      </div>
+      <div class="connect-actions" aria-label="Professional links">
+        <a class="connect-link" href="assets/cv.pdf" target="_blank" rel="noopener" aria-label="Open CV">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 11h8v1.7H8V11Zm0 4h8v1.7H8V15Zm0-8h3v1.7H8V7Z"/></svg>
+          <span>CV</span>
+        </a>
+        <a class="connect-link" href="https://www.linkedin.com/pub/dir/Saud/Abbas" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.6h3.4V20H5.1V8.6Zm1.7-5.7a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.7 8.6H14v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6V20h-3.4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-3.4V8.6Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="connect-link" href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=Rn54FLIAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 10.2l10 7.2 10-7.2L12 3Zm0 2.7 5.9 4.3-5.9 4.2L6.1 10 12 5.7Z"/><path d="M6.2 13.7v3.1c0 1.8 2.6 3.2 5.8 3.2s5.8-1.4 5.8-3.2v-3.1l-5.8 4.2-5.8-4.2Z"/></svg>
+          <span>Google Scholar</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <footer class="footer simple-footer">
+    <p>© <span id="year"></span> Dr. Thekra Saud. All rights reserved.</p>
+  </footer>
+
+  <template id="caseTemplate">
+    <article class="case-card reveal">
+      <div class="comparison" data-before-label="Before" data-after-label="After">
+        <img class="before-img" alt="Before dental case photo" loading="lazy" />
+        <div class="after-wrap"><img class="after-img" alt="After dental case photo" loading="lazy" /></div>
+        <input class="slider" type="range" min="0" max="100" value="50" aria-label="Before and after image comparison slider" />
+        <div class="slider-line"></div><div class="slider-handle">↔</div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
