@@ -195,6 +195,24 @@ function refreshCarouselButtons(shell) {
 }
 
 
+
+function lockPracticeFocusImages() {
+  const fixedImages = {
+    aesthetic: "assets/focus/aesthetic.jpg",
+    restorative: "assets/focus/restorative.jpg",
+    preventive: "assets/focus/preventive.jpg",
+    endodontic: "assets/focus/patient-care.jpg"
+  };
+
+  document.querySelectorAll("[data-expertise-category]").forEach((card) => {
+    const img = card.querySelector("[data-expertise-image]");
+    const key = card.dataset.expertiseCategory;
+    if (img && fixedImages[key]) img.src = fixedImages[key];
+  });
+}
+
+lockPracticeFocusImages();
+
 document.querySelectorAll(".carousel-shell").forEach(setupCarousel);
 
 (async function initCases() {
