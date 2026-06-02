@@ -194,37 +194,6 @@ function refreshCarouselButtons(shell) {
   rightButton.disabled = track.scrollLeft >= maxScroll - 8 || maxScroll <= 8;
 }
 
-function updateExpertiseImages(cases) {
-  const cards = Array.from(document.querySelectorAll("[data-expertise-category]"));
-  const usedImages = new Set();
-
-  function pickCaseForCategory(wanted) {
-    const normalizedWanted = String(wanted || "").toLowerCase();
-    const exact = cases.find((item) => item.after && item.category === normalizedWanted && !usedImages.has(item.after));
-    if (exact) return exact;
-
-    const loose = cases.find((item) => {
-      const category = String(item.category || "").toLowerCase();
-      return item.after && !usedImages.has(item.after) && (category.includes(normalizedWanted) || normalizedWanted.includes(category));
-    });
-    if (loose) return loose;
-
-    return cases.find((item) => item.after && !usedImages.has(item.after));
-  }
-
-  cards.forEach((card) => {
-    const wanted = card.dataset.expertiseCategory;
-    const img = card.querySelector("[data-expertise-image]");
-    if (!img) return;
-
-    const chosen = pickCaseForCategory(wanted);
-    if (chosen?.after) {
-      usedImages.add(chosen.after);
-      img.src = chosen.after;
-      img.alt = `${prettyLabel(chosen.category)} treatment result`;
-    }
-  });
-}
 
 document.querySelectorAll(".carousel-shell").forEach(setupCarousel);
 
@@ -236,6 +205,5 @@ document.querySelectorAll(".carousel-shell").forEach(setupCarousel);
     allCases = fallbackCases;
     galleryStatus.textContent = `${error.message} Showing demo cases for now.`;
   }
-  updateExpertiseImages(allCases);
   renderCases(allCases);
 })();
